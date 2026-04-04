@@ -246,7 +246,7 @@
                 </div>
 
 				<div id="commandGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+					<div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card has-[:checked]:opacity-100 opacity-50 transition-opacity">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500">
@@ -256,16 +256,25 @@
                             </div>
                             <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
                         </div>
+                        <div class="mb-4">
+                            <label class="text-[10px] uppercase tracking-wider text-white/40 font-bold mb-2 block">Allowed Channel</label>
+                            <select class="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-2 text-sm text-white focus:outline-none focus:border-violet-500/50 transition-colors cursor-pointer appearance-none">
+                                <option value="all">All Channels</option>
+                                <option value="commands">#bot-commands</option>
+                                <option value="games">#games</option>
+                                <option value="spam">#bot-spam</option>
+                            </select>
+                        </div>
                         <div class="grid grid-cols-2 gap-2">
-                        <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke start</span>
-                        <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke hunt</span>
-                        <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke travel</span>
-                        <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke dex</span>
-                        <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke team</span>
-                        <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke card</span>
-                        <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke shop</span>
-                        <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke balance</span>
-                        <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke tournament</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke start</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke hunt</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke travel</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke dex</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke team</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke card</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke shop</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke balance</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke tournament</span>
                         </div>
                     </div>
 
