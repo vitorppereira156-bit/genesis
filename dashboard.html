@@ -310,7 +310,7 @@
                         </div>
                     </div>
 
-                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+					<div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card transition-all duration-300 opacity-40 has-[:checked]:opacity-100">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
                                 <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-500">
@@ -320,188 +320,299 @@
                             </div>
                             <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
                         </div>
+
+                        <div class="mb-6 relative group/select">
+                            <label class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2 block ml-1">Channel Override</label>
+                            <div class="relative">
+                                <select class="w-full bg-white/[0.03] border border-white/5 rounded-2xl px-4 py-3 text-xs text-white/80 appearance-none focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] transition-all cursor-pointer">
+                                    <option value="all" class="bg-[#111111]">All Channels</option>
+                                    <option value="cmd" class="bg-[#111111]">#bot-commands</option>
+                                    <option value="ai" class="bg-[#111111]">#ai-chat</option>
+                                    <option value="tools" class="bg-[#111111]">#utility</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/20 group-hover/select:text-white/50 transition-colors">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-2 gap-2">
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/chat</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/summarize</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/translate</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/transcribe</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/poll</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/weather</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/help</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/avatar</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/profile</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/birthday</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/leaderboard</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/chat</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/summarize</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/translate</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/transcribe</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/poll</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/weather</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/help</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/avatar</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/profile</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/birthday</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/leaderboard</span>
                         </div>
                     </div>
 
-                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+					<div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card transition-all duration-300 opacity-40 has-[:checked]:opacity-100">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
-                        		<div class="w-10 h-10 rounded-xl bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-500">
-                            		<i data-lucide="image" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 rounded-xl bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-500">
+                                    <i data-lucide="image" class="w-5 h-5"></i>
                                 </div>
                                 <h3 class="font-bold text-white text-xl">Imaging Engine</h3>
                             </div>
                             <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
                         </div>
+
+                        <div class="mb-6 relative group/select">
+                            <label class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2 block ml-1">Channel Override</label>
+                            <div class="relative">
+                                <select class="w-full bg-white/[0.03] border border-white/5 rounded-2xl px-4 py-3 text-xs text-white/80 appearance-none focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] transition-all cursor-pointer">
+                                    <option value="all" class="bg-[#111111]">All Channels</option>
+                                    <option value="cmd" class="bg-[#111111]">#bot-commands</option>
+                                    <option value="media" class="bg-[#111111]">#media-gen</option>
+                                    <option value="gallery" class="bg-[#111111]">#showcase</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/20 group-hover/select:text-white/50 transition-colors">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-2 gap-2">
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image generate</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image compare</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image info</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image blur</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image pixelate</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image sepia</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image grayscale</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image negative</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image flip</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image flop</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image reverse</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image spin</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image explode</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image implode</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image glitch</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image magik</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image globe</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image freeze</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image overlay</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image caption</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image motivate</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image colorswap</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image speechbubble</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image generate</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image compare</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image info</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image blur</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image pixelate</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image sepia</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image grayscale</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image negative</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image flip</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image flop</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image reverse</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image spin</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image explode</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image implode</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image glitch</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image magik</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image globe</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image freeze</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image overlay</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image caption</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image motivate</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image colorswap</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image speechbubble</span>
                         </div>
                     </div>
 
-                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+					<div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card transition-all duration-300 opacity-40 has-[:checked]:opacity-100">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
-                        		<div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500">
-                            		<i data-lucide="gamepad-2" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500">
+                                    <i data-lucide="gamepad-2" class="w-5 h-5"></i>
                                 </div>
                                 <h3 class="font-bold text-white text-xl">Minigames</h3>
                             </div>
                             <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
                         </div>
+
+                        <div class="mb-6 relative group/select">
+                            <label class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2 block ml-1">Channel Override</label>
+                            <div class="relative">
+                                <select class="w-full bg-white/[0.03] border border-white/5 rounded-2xl px-4 py-3 text-xs text-white/80 appearance-none focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] transition-all cursor-pointer">
+                                    <option value="all" class="bg-[#111111]">All Channels</option>
+                                    <option value="cmd" class="bg-[#111111]">#bot-commands</option>
+                                    <option value="games" class="bg-[#111111]">#minigames</option>
+                                    <option value="fun" class="bg-[#111111]">#fun-zone</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/20 group-hover/select:text-white/50 transition-colors">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-2 gap-2">
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play uno</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play chess</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play dungeon</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play minefield</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play wordle</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play sudoku</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play quiz</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play rps</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play puzzle</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play scramble</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play higherlower</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play cityguesser</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play colosseum</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play tictactoe</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/blackjack</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/dice4</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play uno</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play chess</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play dungeon</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play minefield</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play wordle</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play sudoku</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play quiz</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play rps</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play puzzle</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play scramble</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play higherlower</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play cityguesser</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play colosseum</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play tictactoe</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/blackjack</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/dice4</span>
                         </div>
                     </div>
 
-                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+					<div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card transition-all duration-300 opacity-40 has-[:checked]:opacity-100">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
-                        		<div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500">
-                            		<i data-lucide="coins" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+                                    <i data-lucide="coins" class="w-5 h-5"></i>
                                 </div>
                                 <h3 class="font-bold text-white text-xl">Economy</h3>
                             </div>
                             <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
                         </div>
+
+                        <div class="mb-6 relative group/select">
+                            <label class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2 block ml-1">Channel Override</label>
+                            <div class="relative">
+                                <select class="w-full bg-white/[0.03] border border-white/5 rounded-2xl px-4 py-3 text-xs text-white/80 appearance-none focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] transition-all cursor-pointer">
+                                    <option value="all" class="bg-[#111111]">All Channels</option>
+                                    <option value="cmd" class="bg-[#111111]">#bot-commands</option>
+                                    <option value="market" class="bg-[#111111]">#global-market</option>
+                                    <option value="casino" class="bg-[#111111]">#economy-games</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/20 group-hover/select:text-white/50 transition-colors">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-2 gap-2">
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/balance</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/daily</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/work</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/crime</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/rob</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/deposit</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/withdraw</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/pay</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/shop</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/inventory</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/invest</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/portfolio</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/collect-interest</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/dungeon-shop</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/occupation</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/quests</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/balance</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/daily</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/work</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/crime</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/rob</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/deposit</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/withdraw</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/pay</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/shop</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/inventory</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/invest</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/portfolio</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/collect-interest</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/dungeon-shop</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/occupation</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/quests</span>
                         </div>
                     </div>
 
-                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+					<div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card transition-all duration-300 opacity-40 has-[:checked]:opacity-100">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
-                        		<div class="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-500">
-                            		<i data-lucide="music" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-500">
+                                    <i data-lucide="music" class="w-5 h-5"></i>
                                 </div>
                                 <h3 class="font-bold text-white text-xl">Audio</h3>
                             </div>
                             <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
                         </div>
+
+                        <div class="mb-6 relative group/select">
+                            <label class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2 block ml-1">Channel Override</label>
+                            <div class="relative">
+                                <select class="w-full bg-white/[0.03] border border-white/5 rounded-2xl px-4 py-3 text-xs text-white/80 appearance-none focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] transition-all cursor-pointer">
+                                    <option value="all" class="bg-[#111111]">All Channels</option>
+                                    <option value="music" class="bg-[#111111]">#music-commands</option>
+                                    <option value="stage" class="bg-[#111111]">#stage-requests</option>
+                                    <option value="radio" class="bg-[#111111]">#24-7-radio</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/20 group-hover/select:text-white/50 transition-colors">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-2 gap-2">
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/song</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/shazam</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/seek</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/disconnect</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/set autoplay</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/set auto-leave</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/apply-filter</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/clear-filter</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/remove</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/song</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/shazam</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/seek</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/disconnect</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/set autoplay</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/set auto-leave</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/apply-filter</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/clear-filter</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/remove</span>
                         </div>
                     </div>
 
-                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+					<div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card transition-all duration-300 opacity-40 has-[:checked]:opacity-100">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
-                        		<div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
-                            		<i data-lucide="sprout" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
+                                    <i data-lucide="sprout" class="w-5 h-5"></i>
                                 </div>
                                 <h3 class="font-bold text-white text-xl">Life Sim</h3>
                             </div>
                             <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
                         </div>
+
+                        <div class="mb-6 relative group/select">
+                            <label class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2 block ml-1">Channel Override</label>
+                            <div class="relative">
+                                <select class="w-full bg-white/[0.03] border border-white/5 rounded-2xl px-4 py-3 text-xs text-white/80 appearance-none focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] transition-all cursor-pointer">
+                                    <option value="all" class="bg-[#111111]">All Channels</option>
+                                    <option value="farm" class="bg-[#111111]">#virtual-farm</option>
+                                    <option value="sim" class="bg-[#111111]">#life-sim</option>
+                                    <option value="rpg" class="bg-[#111111]">#rpg-commands</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/20 group-hover/select:text-white/50 transition-colors">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-2 gap-2">
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/farm</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/plant</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/harvest</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/fish</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/hunt</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/lockpick</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/safecrack</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/open</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/farm</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/plant</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/harvest</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/fish</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/hunt</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/lockpick</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/safecrack</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/open</span>
                         </div>
                     </div>
-					
 
-                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+					<div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card transition-all duration-300 opacity-40 has-[:checked]:opacity-100">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
-                        		<div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-500">
-                            		<i data-lucide="heart" class="w-5 h-5"></i>
+                                <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-500">
+                                    <i data-lucide="heart" class="w-5 h-5"></i>
                                 </div>
                                 <h3 class="font-bold text-white text-xl">Fun & Social</h3>
                             </div>
                             <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
                         </div>
+
+                        <div class="mb-6 relative group/select">
+                            <label class="text-[10px] uppercase tracking-widest text-white/30 font-bold mb-2 block ml-1">Channel Override</label>
+                            <div class="relative">
+                                <select class="w-full bg-white/[0.03] border border-white/5 rounded-2xl px-4 py-3 text-xs text-white/80 appearance-none focus:outline-none focus:border-violet-500/50 focus:bg-white/[0.05] transition-all cursor-pointer">
+                                    <option value="all" class="bg-[#111111]">All Channels</option>
+                                    <option value="general" class="bg-[#111111]">#general</option>
+                                    <option value="lounge" class="bg-[#111111]">#the-lounge</option>
+                                    <option value="media" class="bg-[#111111]">#media-sharing</option>
+                                </select>
+                                <div class="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/20 group-hover/select:text-white/50 transition-colors">
+                                    <i data-lucide="chevron-down" class="w-4 h-4"></i>
+                                </div>
+                            </div>
+                        </div>
+
                         <div class="grid grid-cols-2 gap-2">
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/hug</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/kiss</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/ship</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/anime-finder</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/emojimixer</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/memer</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/dadjoke</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/randomfact</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/oracle</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/flip</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/cat</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/dog</span>
-                        <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/pug</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/hug</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/kiss</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/ship</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/anime-finder</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/emojimixer</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/memer</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/dadjoke</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/randomfact</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/oracle</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/flip</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/cat</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/dog</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/pug</span>
                         </div>
                     </div>
                 </div>
