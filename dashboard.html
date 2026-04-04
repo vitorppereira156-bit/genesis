@@ -245,7 +245,7 @@
                     </div>
                 </div>
 
-                <div id="commandGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+				<div id="commandGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
                         <div class="flex items-center justify-between mb-6">
                             <div class="flex items-center gap-3">
@@ -256,10 +256,16 @@
                             </div>
                             <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
                         </div>
-                        <div class="grid grid-cols-1 gap-2">
-                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke start</span>
-                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke hunt</span>
-                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke travel</span>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-blue-400">/poke start</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-blue-400">/poke hunt</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-blue-400">/poke travel</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-blue-400">/poke dex</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-blue-400">/poke team</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-blue-400">/poke card</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-blue-400">/poke shop</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-blue-400">/poke balance</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-blue-400">/poke tournament</span>
                         </div>
                     </div>
 
@@ -276,8 +282,13 @@
                         <div class="grid grid-cols-2 gap-2">
                             <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/kick</span>
                             <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/ban</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/unban</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/timeout add</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/timeout remove</span>
                             <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/purge</span>
-                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/timeout</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/channel lock</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/role add</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/voice deaf</span>
                         </div>
                     </div>
 
@@ -293,9 +304,116 @@
                         </div>
                         <div class="grid grid-cols-2 gap-2">
                             <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/chat</span>
-                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/translate</span>
                             <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/summarize</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/translate</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/transcribe</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/weather</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/poll</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/avatar</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/leaderboard</span>
                             <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/help</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-fuchsia-500/10 flex items-center justify-center text-fuchsia-500">
+                                <i data-lucide="image" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-xl">Imaging Engine</h3>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image generate</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image compare</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image glitch</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image magik</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image caption</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-fuchsia-400">/image speechbubble</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-orange-500/10 flex items-center justify-center text-orange-500">
+                                <i data-lucide="gamepad-2" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-xl">Minigames</h3>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play uno</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play chess</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play wordle</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/blackjack</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play quiz</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-orange-400">/play rps</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+                                <i data-lucide="coins" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-xl">Economy</h3>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/balance</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/daily</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/work</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/shop</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/invest</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-emerald-400">/quests</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-violet-500/10 flex items-center justify-center text-violet-500">
+                                <i data-lucide="music" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-xl">Audio</h3>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/song</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/shazam</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/seek</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/apply-filter</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/set autoplay</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-violet-400">/disconnect</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-amber-500/10 flex items-center justify-center text-amber-500">
+                                <i data-lucide="sprout" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-xl">Life Sim</h3>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/farm</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/plant</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/harvest</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/fish</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/lockpick</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-amber-400">/open</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+                        <div class="flex items-center gap-3 mb-6">
+                            <div class="w-10 h-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-500">
+                                <i data-lucide="heart" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-xl">Fun & Social</h3>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/hug</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/kiss</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/ship</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/memer</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/dadjoke</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-rose-400">/cat</span>
                         </div>
                     </div>
                 </div>
