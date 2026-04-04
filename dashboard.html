@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genesis Bot | Command Library</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #050505;
+            color: white;
+            overflow-x: hidden;
+        }
+
+        .ruby-gradient {
+            background: linear-gradient(135deg, #e11d48 0%, #be123c 100%);
+        }
+
+        .premium-gold {
+            background: linear-gradient(
+                to bottom,
+                #fff7ad 0%,
+                #ffa91b 22%,
+                #ffd33d 50%,
+                #d39105 51%,
+                #ffcb47 78%,
+                #b57f00 100%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 2px rgba(217, 119, 6, 0.4));
+            font-weight: 800;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .fade-slide {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .fade-slide.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+
+        /* Unified Animated Menu Reveal */
+        .dropdown-menu {
+            display: block;
+            pointer-events: none;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px) scale(0.95);
+            transition: all 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+            transform-origin: top right;
+        }
+
+        /* Hover trigger for all group-based menus */
+        .group:hover .dropdown-menu {
+            pointer-events: auto;
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0) scale(1);
+        }
+
+        /* The "Safety Bridge": Prevents the menu from closing when moving mouse through the gap */
+        .group::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            height: 20px; /* Bridge height to cover the gap */
+            display: none;
+        }
+
+        .group:hover::after {
+            display: block;
+        }
+
+        .welcome-card-img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+    </style>
+</head>
+<body class="custom-scrollbar">
+
+    <header class="fixed top-0 w-full z-50 glass-card border-b border-white/5">
+        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-12">
+                <a href="index.html" class="flex items-center gap-3 group/logo">
+                    <div class="relative w-10 h-10 flex items-center justify-center">
+                        <div class="absolute inset-0 ruby-gradient rounded-full blur-md opacity-60 group-hover/logo:opacity-100 transition"></div>
+                        <img src="https://github.com/vitorppereira156-bit/genesis/blob/main/657358446_1986095122281143_4956290524906712235_n.png?raw=true" 
+                             alt="Genesis Logo" 
+                             class="relative w-full h-full object-contain rounded-full">
+                    </div>
+                    <span class="text-xl font-bold tracking-tight">Genesis</span>
+                </a>
+            </div>
+
+            <div class="flex items-center gap-4" id="auth-container">
+                <a href="https://discord.com/oauth2/authorize?client_id=1470165017516183618&response_type=token&redirect_uri=https%3A%2F%2Fvitorppereira156-bit.github.io%2Fgenesis%2Fcommands.html&scope=identify+guilds+email" 
+                   class="px-6 py-2.5 text-sm font-semibold text-gray-400 hover:text-white transition flex items-center gap-2 group">
+                    <i data-lucide="user" class="w-4 h-4 group-hover:scale-110 transition"></i> Login
+                </a>
+                <a href="https://discord.com/oauth2/authorize?client_id=1470165017516183618&permissions=8&redirect_uri=https%3A%2F%2Fvitorppereira156-bit.github.io%2Fgenesis%2Fcommands.html&integration_type=0&scope=bot+applications.commands" 
+                   class="ruby-gradient px-6 py-2.5 rounded-xl text-sm font-bold flex items-center gap-2 hover:shadow-[0_0_20px_rgba(225,29,72,0.4)] transition duration-300">
+                    <i data-lucide="plus-circle" class="w-4 h-4"></i>
+                </a
+            </div>
+        </div>
+    </header>
+
+    <main class="pt-32 pb-24 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-24 fade-slide">
+            <h1 class="text-5xl md:text-7xl font-extrabold mb-6 tracking-tight">
+                Genesis <span class="bg-gradient-to-r from-violet-400 to-fuchsia-500 bg-clip-text text-transparent">Dashboard</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+                Manage your profile, monitor your server's growth, and configure Genesis modules in one centralized hub.
+            </p>
+        </div>
+
+        <div class="space-y-24">
+            <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-slide">
+                <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center text-blue-500">
+                        <i data-lucide="coins" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Credits</p>
+                        <p class="text-2xl font-bold text-white">0</p>
+                    </div>
+                </div>
+                <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center text-amber-500">
+                        <i data-lucide="star" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Level</p>
+                        <p class="text-2xl font-bold text-white">4</p>
+                    </div>
+                </div>
+                <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+                        <i data-lucide="trophy" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Rank</p>
+                        <p class="text-2xl font-bold text-white">5,306,540</p>
+                    </div>
+                </div>
+                <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl flex items-center gap-4">
+                    <div class="w-12 h-12 rounded-2xl bg-violet-500/10 flex items-center justify-center text-violet-500">
+                        <i data-lucide="heart" class="w-6 h-6"></i>
+                    </div>
+                    <div>
+                        <p class="text-gray-500 text-sm font-medium">Reputation</p>
+                        <p class="text-2xl font-bold text-white">0</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-8 fade-slide">
+                <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                    General <span class="text-xs font-normal text-gray-500 bg-white/5 px-2 py-1 rounded-lg">4 plugins</span>
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl flex flex-col justify-between group hover:border-violet-500/30 transition-all">
+                        <div class="space-y-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-400">
+                                <i data-lucide="eye" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-lg">Overview</h3>
+                            <p class="text-gray-500 text-sm">Get main information about your server settings</p>
+                        </div>
+                        <button class="mt-8 w-full py-3 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                            Visit <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl flex flex-col justify-between group hover:border-violet-500/30 transition-all">
+                        <div class="space-y-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-400">
+                                <i data-lucide="settings" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-lg">Server Settings</h3>
+                            <p class="text-gray-500 text-sm">Manage your core server configurations</p>
+                        </div>
+                        <button class="mt-8 w-full py-3 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                            Visit <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl flex flex-col justify-between group hover:border-violet-500/30 transition-all">
+                        <div class="space-y-4">
+                            <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-gray-400">
+                                <i data-lucide="layout" class="w-5 h-5"></i>
+                            </div>
+                            <h3 class="font-bold text-white text-lg">Embed Messages</h3>
+                            <p class="text-gray-500 text-sm">Create and manage custom embed messages</p>
+                        </div>
+                        <button class="mt-8 w-full py-3 rounded-xl bg-white/5 text-white font-medium hover:bg-white/10 transition-all flex items-center justify-center gap-2">
+                            Visit <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="space-y-12 fade-slide">
+                <div class="flex items-center justify-between">
+                    <h2 class="text-2xl font-bold text-white">Command <span class="text-violet-500">Encyclopedia</span></h2>
+                    <div class="relative w-72 group">
+                        <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
+                            <i data-lucide="search" class="w-4 h-4 text-gray-500 group-focus-within:text-violet-500 transition-colors"></i>
+                        </div>
+                        <input type="text" id="commandSearch" placeholder="Search modules..." 
+                               class="w-full bg-[#111111] border border-white/10 rounded-xl py-2 pl-10 pr-4 text-sm text-gray-200 focus:outline-none focus:border-violet-500/50 transition-all">
+                    </div>
+                </div>
+
+                <div id="commandGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500">
+                                    <i data-lucide="swords" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-xl">Pokémon RPG</h3>
+                            </div>
+                            <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
+                        </div>
+                        <div class="grid grid-cols-1 gap-2">
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke start</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke hunt</span>
+                            <span class="command-item text-xs font-mono p-2 bg-white/5 rounded border border-white/5 text-blue-400">/poke travel</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-red-500/10 flex items-center justify-center text-red-500">
+                                    <i data-lucide="shield" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-xl">Moderation</h3>
+                            </div>
+                            <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/kick</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/ban</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/purge</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-red-400">/timeout</span>
+                        </div>
+                    </div>
+
+                    <div class="bg-[#111111] border border-white/5 p-6 rounded-3xl group command-card">
+                        <div class="flex items-center justify-between mb-6">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-cyan-500/10 flex items-center justify-center text-cyan-500">
+                                    <i data-lucide="bot" class="w-5 h-5"></i>
+                                </div>
+                                <h3 class="font-bold text-white text-xl">AI & Utility</h3>
+                            </div>
+                            <input type="checkbox" checked class="w-5 h-5 accent-violet-500 rounded-lg cursor-pointer">
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/chat</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/translate</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/summarize</span>
+                            <span class="command-item text-[10px] font-mono p-1.5 bg-white/5 rounded border border-white/5 text-cyan-400">/help</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        // 1. INITIALIZE UI & ANIMATIONS
+        lucide.createIcons();
+
+        // Reveal animations on scroll
+        const observerOptions = {
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-slide').forEach(el => observer.observe(el));
+
+        // 2. DISCORD AUTHENTICATION & PERSISTENCE LOGIC
+        async function handleDiscordLogin() {
+            const fragment = new URLSearchParams(window.location.hash.substring(1));
+            let accessToken = fragment.get('access_token');
+
+            // Check browser storage if no token is in the URL
+            if (!accessToken) {
+                accessToken = localStorage.getItem('discord_access_token');
+            } else {
+                // New login detected: save token and clean the URL
+                localStorage.setItem('discord_access_token', accessToken);
+                window.history.replaceState({}, document.title, window.location.pathname);
+            }
+
+            // If no token is found in URL or Storage, stop here
+            if (!accessToken) return;
+
+            try {
+                // Fetch user data from Discord API using the token
+                const response = await fetch('https://discord.com/api/users/@me', {
+                    headers: {
+                        'Authorization': `Bearer ${accessToken}`,
+                        'Accept': 'application/json'
+                    }
+                });
+
+                // If the token is invalid or expired (401), clear it
+                if (response.status === 401) {
+                    localStorage.removeItem('discord_access_token');
+                    return;
+                }
+
+                const user = await response.json();
+
+                if (user.id) {
+                    const container = document.getElementById('auth-container');
+                    if (!container) return;
+
+                    // Determine the correct Avatar URL
+                    const avatarUrl = user.avatar ?
+                        `https://cdn.discordapp.com/avatars/${user.id}/${user.avatar}.png` :
+                        `https://cdn.discordapp.com/embed/avatars/0.png`;
+
+                    // Update the Header UI to show the User Profile and Dropdown
+                    container.innerHTML = `
+                        <div class="flex items-center gap-4">
+                            <div class="relative group h-full flex items-center">
+                                <button class="flex items-center gap-3 bg-white/5 hover:bg-white/10 p-1.5 pr-4 rounded-xl transition border border-white/5 min-w-max">
+                                    <img src="${avatarUrl}" class="w-8 h-8 rounded-lg border border-white/10 shadow-lg">
+                                    <span class="text-sm font-bold text-gray-200">${user.username}</span>
+                                    <i data-lucide="chevron-down" class="w-4 h-4 text-gray-500"></i>
+                                </button>
+                                
+                                <div class="dropdown-menu absolute top-[calc(100%-10px)] right-0 w-52 bg-[#0a0a0a] border border-white/10 rounded-2xl p-2 mt-2 shadow-2xl z-50 invisible opacity-0 group-hover:visible group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-200">
+                                    <a href="pricing.html" class="flex items-center justify-between p-3 hover:bg-amber-500/10 rounded-xl transition group/premium">
+                                        <div class="flex items-center gap-3">
+                                            <i data-lucide="crown" class="w-4 h-4 text-amber-400"></i>
+                                            <span class="text-sm font-bold text-amber-400">Premium ✨</span>
+                                        </div>
+                                    </a>
+                                    <div class="h-px bg-white/5 mx-2 my-1"></div>
+                                    <a href="#" class="flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition text-gray-300 hover:text-white">
+                                        <i data-lucide="layout-dashboard" class="w-4 h-4 text-rose-500"></i>
+                                        <span class="text-sm font-semibold">Dashboard</span>
+                                    </a>
+                                    <a href="commands.html" class="flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition text-gray-300 hover:text-white">
+                                        <i data-lucide="terminal" class="w-4 h-4 text-cyan-400"></i>
+                                        <span class="text-sm font-semibold">Commands</span>
+                                    </a>
+                                    <a href="#" class="flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition text-gray-300 hover:text-white">
+                                        <i data-lucide="book-open" class="w-4 h-4 text-emerald-400"></i>
+                                        <span class="text-sm font-semibold">Documentation</span>
+                                    </a>
+                                    <a href="#" class="flex items-center gap-3 p-3 hover:bg-white/5 rounded-xl transition text-gray-300 hover:text-white">
+                                        <i data-lucide="life-buoy" class="w-4 h-4 text-violet-400"></i>
+                                        <span class="text-sm font-semibold">Support</span>
+                                    </a>
+                                    <div class="h-px bg-white/5 mx-2 my-1"></div>
+                                    <button onclick="logout()" class="w-full flex items-center gap-3 p-3 hover:bg-rose-500/10 rounded-xl transition text-rose-400">
+                                        <i data-lucide="log-out" class="w-4 h-4"></i>
+                                        <span class="text-sm font-semibold">Logout</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <a href="https://discord.com/oauth2/authorize?client_id=1470165017516183618&permissions=8&redirect_uri=https%3A%2F%2Fvitorppereira156-bit.github.io%2Fgenesis%2F&integration_type=0&scope=bot+applications.commands" 
+                               class="ruby-gradient w-10 h-10 rounded-xl flex items-center justify-center hover:shadow-[0_0_20px_rgba(225,29,72,0.4)] transition duration-300">
+                                <i data-lucide="plus-circle" class="w-5 h-5 text-white"></i> 
+                            </a>
+                        </div>
+                    `;
+
+                    // Re-initialize icons for the newly injected HTML
+                    setTimeout(() => {
+                        lucide.createIcons();
+                    }, 50);
+                }
+            } catch (err) {
+                console.error("Auth Persistence Error:", err);
+            }
+        }
+
+        // 3. LOGOUT FUNCTION
+        window.logout = function() {
+            localStorage.removeItem('discord_access_token');
+            // Redirect to clear any remaining hashes and reset UI
+            window.location.href = window.location.pathname;
+        }
+
+		// 4. SEARCH BAR
+		document.getElementById('commandSearch').addEventListener('input', function(e) {
+                const searchTerm = e.target.value.toLowerCase();
+                const cards = document.querySelectorAll('.command-card');
+
+                cards.forEach(card => {
+                    const items = card.querySelectorAll('.command-item');
+                    let hasVisibleItem = false;
+
+                    items.forEach(item => {
+                        if (item.textContent.toLowerCase().includes(searchTerm)) {
+                            item.style.display = 'block';
+                            hasVisibleItem = true;
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+
+                    // Hide the entire card if no commands inside match the search
+                    card.style.display = hasVisibleItem ? 'block' : 'none';
+                });
+            });
+
+        // Run auth check when the page content is ready
+        document.addEventListener('DOMContentLoaded', handleDiscordLogin);
+    </script>
+</body>
+</html>
