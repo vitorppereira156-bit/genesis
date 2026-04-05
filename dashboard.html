@@ -107,21 +107,23 @@
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-		//5. LOG DETECTOR
-		/* If the parent DOES NOT have the 'is-connected' class */
+		/* 1. The 'Global' lock (Bot not in server) */
 		.dashboard-container:not(.is-connected) .command-card {
-    		opacity: 0.3 !important;
-    		pointer-events: none; /* Prevents clicking/toggling */
+    		opacity: 0.2 !important;
     		filter: grayscale(1);
-    		cursor: not-allowed;
+    		pointer-events: none;
 		}
 
-		/* Optional: Show a "Not Connected" banner */
-		.connection-warning {
-    		display: none;
+		/* 2. The 'Individual' lock (Checkbox unchecked) */
+		/* This ensures the dropdown and commands all fade when the toggle is off */
+		.command-card:not(:has(input[type="checkbox"]:checked)) {
+    		opacity: 0.4;
+    		filter: grayscale(0.5);
 		}
-		.dashboard-container:not(.is-connected) .connection-warning {
-    		display: flex;
+
+		/* Hide the warning if connected */
+		.dashboard-container.is-connected .connection-warning {
+    		display: none;
 		}
     </style>
 </head>
@@ -808,21 +810,20 @@
                 });
             });
 
-		// 5. LOG DETECTOR
-		// This function simulates checking if the bot is in the server
-    	function updateBotStatus(isInServer) {
-        	const container = document.querySelector('.dashboard-container');
-        	if (isInServer) {
-            	container.classList.add('is-connected');
-        	} else {
-            	container.classList.remove('is-connected');
-        	}
-    	}
+		// SIMULATION: In a real app, you'd check your database here.
+    	// For now, let's pretend we check a URL parameter or a variable.
+    
+    	const botDetectedInServer = true; // Change to 'false' to see it gray out again
 
-    	// Example Usage: 
-    	// You would call this based on your backend response.
-    	// updateBotStatus(true);  // This would enable everything
-    	updateBotStatus(false); // This starts the page grayed out
+    	const dashboard = document.querySelector('.dashboard-container');
+    
+    	if (botDetectedInServer) {
+        	dashboard.classList.add('is-connected');
+        	console.log("Bot status: Connected");
+    	} else {
+        	dashboard.classList.remove('is-connected');
+        	console.log("Bot status: Disconnected");
+    	}
 
         // Run auth check when the page content is ready
         document.addEventListener('DOMContentLoaded', handleDiscordLogin);
