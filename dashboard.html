@@ -106,6 +106,23 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.05);
         }
+
+		//5. LOG DETECTOR
+		/* If the parent DOES NOT have the 'is-connected' class */
+		.dashboard-container:not(.is-connected) .command-card {
+    		opacity: 0.3 !important;
+    		pointer-events: none; /* Prevents clicking/toggling */
+    		filter: grayscale(1);
+    		cursor: not-allowed;
+		}
+
+		/* Optional: Show a "Not Connected" banner */
+		.connection-warning {
+    		display: none;
+		}
+		.dashboard-container:not(.is-connected) .connection-warning {
+    		display: flex;
+		}
     </style>
 </head>
 <body class="custom-scrollbar">
@@ -146,6 +163,26 @@
                 Manage your profile, monitor your server's growth, and configure Genesis modules in one centralized hub.
             </p>
         </div>
+
+		<div class="dashboard-container p-8 space-y-8">
+    
+	<div class="dashboard-container p-8 space-y-8">
+    
+    	<div class="connection-warning bg-amber-500/10 border border-amber-500/20 p-4 rounded-2xl flex items-center gap-4 mb-8">
+        	<div class="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-500">
+            	<i data-lucide="alert-circle" class="w-6 h-6"></i>
+        	</div>
+        	<div>
+            	<h4 class="text-white font-bold">Bot Not Detected</h4>
+            	<p class="text-white/60 text-sm">Please invite the bot to your server to manage these modules.</p>
+        	</div>
+        	<button class="ml-auto bg-amber-500 hover:bg-amber-600 text-black px-6 py-2 rounded-xl font-bold transition-all">
+            	Invite Bot
+        	</button>
+    	</div>
+
+    	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        	</div>
 
         <div class="space-y-24">
             <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 fade-slide">
@@ -770,6 +807,22 @@
                     card.style.display = hasVisibleItem ? 'block' : 'none';
                 });
             });
+
+		// 5. LOG DETECTOR
+		// This function simulates checking if the bot is in the server
+    	function updateBotStatus(isInServer) {
+        	const container = document.querySelector('.dashboard-container');
+        	if (isInServer) {
+            	container.classList.add('is-connected');
+        	} else {
+            	container.classList.remove('is-connected');
+        	}
+    	}
+
+    	// Example Usage: 
+    	// You would call this based on your backend response.
+    	// updateBotStatus(true);  // This would enable everything
+    	updateBotStatus(false); // This starts the page grayed out
 
         // Run auth check when the page content is ready
         document.addEventListener('DOMContentLoaded', handleDiscordLogin);
