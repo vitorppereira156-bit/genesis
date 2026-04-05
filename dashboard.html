@@ -106,25 +106,6 @@
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
             border: 1px solid rgba(255,255,255,0.05);
         }
-
-		/* 1. The 'Global' lock (Bot not in server) */
-		.dashboard-container:not(.is-connected) .command-card {
-    		opacity: 0.2 !important;
-    		filter: grayscale(1);
-    		pointer-events: none;
-		}
-
-		/* 2. The 'Individual' lock (Checkbox unchecked) */
-		/* This ensures the dropdown and commands all fade when the toggle is off */
-		.command-card:not(:has(input[type="checkbox"]:checked)) {
-    		opacity: 0.4;
-    		filter: grayscale(0.5);
-		}
-
-		/* Hide the warning if connected */
-		.dashboard-container.is-connected .connection-warning {
-    		display: none;
-		}
     </style>
 </head>
 <body class="custom-scrollbar">
@@ -165,21 +146,6 @@
                 Manage your profile, monitor your server's growth, and configure Genesis modules in one centralized hub.
             </p>
         </div>
-    
-	<div class="dashboard-container p-4 sm:p-8 space-y-8">
-    
-    	<div class="connection-warning bg-amber-500/10 border border-amber-500/20 p-4 rounded-2xl flex items-center gap-4 mb-8">
-        	<div class="w-10 h-10 rounded-full bg-amber-500/20 flex items-center justify-center text-amber-500">
-            	<i data-lucide="alert-circle" class="w-6 h-6"></i>
-        	</div>
-        	<div>
-            	<h4 class="text-white font-bold">Bot Not Detected</h4>
-            	<p class="text-white/60 text-sm">Please invite the bot to your server to manage these modules.</p>
-        	</div>
-        	<button class="ml-auto bg-amber-500 hover:bg-amber-600 text-black px-6 py-2 rounded-xl font-bold transition-all">
-            	Invite Bot
-        	</button>
-    	</div>
 
     	<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         	</div>
@@ -277,7 +243,7 @@
                         <div class="absolute inset-y-0 left-3 flex items-center pointer-events-none">
                             <i data-lucide="search" class="w-4 h-4 text-gray-500 group-focus-within:text-violet-500 transition-colors"></i>
                         </div>
-                        <input type="text" id="commandSearch" placeholder="Search modules..." 
+                        <input type="text" id="commandSearch" placeholder="Search..." 
                                class="w-full bg-[#111111] border border-white/10 rounded-xl py-2 pl-10 pr-4 text-sm text-gray-200 focus:outline-none focus:border-violet-500/50 transition-all">
                     </div>
                 </div>
@@ -808,21 +774,6 @@
                     card.style.display = hasVisibleItem ? 'block' : 'none';
                 });
             });
-
-		// SIMULATION: In a real app, you'd check your database here.
-    	// For now, let's pretend we check a URL parameter or a variable.
-    
-    	const botDetectedInServer = true; // Change to 'false' to see it gray out again
-
-    	const dashboard = document.querySelector('.dashboard-container');
-    
-    	if (botDetectedInServer) {
-        	dashboard.classList.add('is-connected');
-        	console.log("Bot status: Connected");
-    	} else {
-        	dashboard.classList.remove('is-connected');
-        	console.log("Bot status: Disconnected");
-    	}
 
         // Run auth check when the page content is ready
         document.addEventListener('DOMContentLoaded', handleDiscordLogin);
